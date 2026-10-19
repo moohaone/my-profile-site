@@ -63,7 +63,7 @@ struct ShareCardSheet: View {
                     Button("닫기") { dismiss() }
                 }
             }
-            .task { render() }
+            .onAppear { render() }
         }
         .presentationDetents([.large])
     }

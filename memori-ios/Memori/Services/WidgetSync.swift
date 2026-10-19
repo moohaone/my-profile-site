@@ -5,7 +5,6 @@ import WidgetKit
 /// The widget computes weeks left from the shared profile on its own.
 /// The app only needs to hand over the person to feature.
 enum WidgetSync {
-    @MainActor
     static func publish(context: ModelContext) {
         let people = (try? context.fetch(FetchDescriptor<Person>(sortBy: [SortDescriptor(\.createdAt)]))) ?? []
         let upcoming = people

@@ -165,10 +165,15 @@ struct PersonDetailView: View {
         }
     }
 
+    /// Dismiss first: SwiftData on iOS 17 can crash if this view reads the
+    /// person after the delete is processed.
     private func delete() {
         Reminders.cancelMeeting(uid: person.uid)
-        context.delete(person)
-        WidgetSync.publish(context: context)
+        let target = person
         dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+            context.delete(target)
+            WidgetSync.publish(context: context)
+        }
     }
 }

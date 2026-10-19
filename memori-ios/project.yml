@@ -11,7 +11,7 @@ options:
 
 settings:
   base:
-    SWIFT_VERSION: "5.9"
+    SWIFT_VERSION: "5.0"
     DEVELOPMENT_TEAM: ""
     MARKETING_VERSION: "2.0.0"
     CURRENT_PROJECT_VERSION: "1"
@@ -28,6 +28,8 @@ targets:
       properties:
         CFBundleDisplayName: memori
         CFBundleDevelopmentRegion: ko
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
@@ -55,6 +57,8 @@ targets:
       path: MemoriWidget/Info.plist
       properties:
         CFBundleDisplayName: memori
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     entitlements:
@@ -75,6 +79,9 @@ targets:
     platform: iOS
     sources:
       - MemoriTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - target: Memori
 
