@@ -1,7 +1,7 @@
 // memori — waitlist + small shared helpers.
 //
 // Set WAITLIST_ENDPOINT to a Google Apps Script web app URL (see
-// docs/memori-v2/waitlist-setup.md). Until it is set, the form refuses to
+// memori/WAITLIST.md). Until it is set, the form refuses to
 // submit instead of silently dropping sign-ups.
 const WAITLIST_ENDPOINT = '';
 
