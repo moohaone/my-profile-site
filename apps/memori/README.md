@@ -1,6 +1,6 @@
-# memori-ios — memori v2 (iOS 네이티브)
+# memori — v2 (iOS 네이티브)
 
-삶의 모든 것을 단 하나의 단위, **남은 시간**으로 보여주는 앱. 기획은 [`docs/memori-v2/prd.md`](../docs/memori-v2/prd.md)의 "제품 코어: 남은 시간 렌즈"를 따릅니다.
+삶의 모든 것을 단 하나의 단위, **남은 시간**으로 보여주는 앱. 기획은 [`docs/memori-v2/prd.md`](../../docs/memori-v2/prd.md)의 "제품 코어: 남은 시간 렌즈"를 따릅니다.
 
 - **언어·프레임워크:** SwiftUI, SwiftData, WidgetKit
 - **최소 버전:** iOS 17
@@ -19,7 +19,7 @@
    - 그리고 `project.yml`의 `DEVELOPMENT_TEAM`에 Apple 개발자 팀 ID를 넣습니다.
 3. 프로젝트를 생성하고 엽니다.
    ```sh
-   cd memori-ios
+   cd apps/memori
    xcodegen
    open Memori.xcodeproj
    ```
@@ -30,7 +30,7 @@
 ## 구조
 
 ```
-memori-ios/
+apps/memori/
 ├── project.yml          XcodeGen 설정 (앱, 위젯, 테스트 타깃)
 ├── Shared/              앱과 위젯이 함께 쓰는 코드
 │   ├── LifeMath.swift   모든 숫자 계산 (남은 주, 남은 만남, 노동 시간)
