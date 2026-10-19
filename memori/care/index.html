@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>memori — 부모님과의 시간</title>
+  <meta name="description" content="부모님을 만날 날, 생각보다 많이 남지 않았습니다. memori는 부모님의 건강과 병원, 행정, 형제 간 분담을 한곳에서 챙기는 앱입니다.">
+  <meta property="og:title" content="memori — 부모님과 남은 시간">
+  <meta property="og:description" content="부모님을 만날 날을 세어본 적 있나요?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="mark" href="./">memori</a>
+      <a class="cta-link" href="#join">대기자 명단</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Memento mori</p>
+        <h1>부모님을 만날 날을<br>세어본 적 있나요?</h1>
+        <p class="lead">대부분은 생각보다 훨씬 적게 남아 있습니다. memori는 그 남은 만남을 지키는 앱입니다. 부모님의 건강과 병원, 서류, 형제 간 역할까지 한곳에서.</p>
+      </section>
+
+      <section class="reveal" aria-labelledby="calc-title">
+        <h2 id="calc-title">남은 만남</h2>
+        <p class="muted">아래 가정은 직접 바꿀 수 있습니다. 넉넉하게 잡아도, 숫자는 크지 않습니다.</p>
+
+        <div class="calc">
+          <div class="calc-row">
+            <div class="field">
+              <label for="parent-age">부모님 나이</label>
+              <input id="parent-age" type="number" inputmode="numeric" min="30" max="110" value="68">
+            </div>
+            <div class="field">
+              <label for="visits">1년에 뵙는 횟수</label>
+              <input id="visits" type="number" inputmode="numeric" min="0" max="365" value="6">
+            </div>
+            <div class="field">
+              <label for="lifespan">가정한 수명</label>
+              <input id="lifespan" type="number" inputmode="numeric" min="50" max="120" value="90">
+            </div>
+          </div>
+
+          <div>
+            <div class="figure"><span id="visits-left">132</span><span class="figure-unit">번</span></div>
+            <p class="muted small" id="visits-note"></p>
+          </div>
+
+          <canvas class="weeks" id="dots" role="img" aria-label="한 점이 한 번의 만남"></canvas>
+          <div class="legend">
+            <span style="--c: var(--healthy)">남은 만남 한 번</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <h2>걱정은 많은데,<br>챙길 방법이 흩어져 있습니다.</h2>
+        <p class="muted">병원 예약과 약은 카톡방에, 장기요양등급과 보험 서류는 누군가의 머릿속에, 형제 간 분담은 서운함 속에. 멀리 살수록, 바쁠수록 더 그렇습니다.</p>
+
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>부모님 한 분, 한 페이지</h3>
+              <p>복용 약, 다니는 병원, 다음 진료일, 검진 결과를 한곳에 모읍니다.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>형제가 함께 보는 할 일</h3>
+              <p>병원 동행, 서류 신청, 안부 전화. 누가 무엇을 맡았는지 모두가 압니다.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>다음 만남을 미리</h3>
+              <p>남은 만남의 숫자를 보며, 다음에 뵐 날을 먼저 정합니다.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="reveal">
+        <h2>덜어낸 앱</h2>
+        <div class="principles">
+          <div><strong>숫자 하나</strong><p>남은 만남. 나머지는 그 숫자를 지키기 위한 도구입니다.</p></div>
+          <div><strong>가족이 함께</strong><p>한 사람이 모든 걸 짊어지지 않도록, 처음부터 함께 쓰게 만들었습니다.</p></div>
+          <div><strong>광고 없음</strong><p>부모님의 건강 정보는 가족만의 것입니다. 팔지 않습니다.</p></div>
+        </div>
+      </section>
+
+      <section class="reveal" id="join" aria-labelledby="join-title">
+        <h2 id="join-title">먼저 만나보세요</h2>
+        <p class="muted">첫 100가족과 함께 만듭니다. 출시 전에 가장 먼저 연락드립니다.</p>
+
+        <form class="waitlist" novalidate>
+          <input type="hidden" name="variant" value="care">
+
+          <div class="field">
+            <label for="email">이메일</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <fieldset class="fieldset">
+            <legend>부모님과 관련해 지금 가장 마음이 쓰이는 것은? (복수 선택)</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="pain" value="health"><span>병원 · 약 관리</span></label>
+              <label><input type="checkbox" name="pain" value="admin"><span>장기요양 · 보험 · 서류</span></label>
+              <label><input type="checkbox" name="pain" value="siblings"><span>형제 간 역할 분담</span></label>
+              <label><input type="checkbox" name="pain" value="distance"><span>멀리 살아서 걱정</span></label>
+              <label><input type="checkbox" name="pain" value="time"><span>자주 못 뵙는 것</span></label>
+              <label><input type="checkbox" name="pain" value="none"><span>아직은 괜찮음</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend>가족 모두가 함께 쓴다면, 한 달에 얼마까지 낼 의향이 있나요?</legend>
+            <div class="chips">
+              <label><input type="radio" name="wtp" value="0"><span>무료라면</span></label>
+              <label><input type="radio" name="wtp" value="5000"><span>5천 원</span></label>
+              <label><input type="radio" name="wtp" value="10000"><span>1만 원</span></label>
+              <label><input type="radio" name="wtp" value="20000"><span>2만 원</span></label>
+              <label><input type="radio" name="wtp" value="30000+"><span>3만 원 이상</span></label>
+            </div>
+          </fieldset>
+
+          <button class="submit" type="submit">대기자 명단에 오르기</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="consent">이메일은 memori 출시 소식에만 사용하며, 언제든 삭제를 요청할 수 있습니다.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>남은 만남은 입력한 가정으로 계산한 단순 추정치이며, 실제 수명이나 건강 상태를 예측하지 않습니다.</p>
+      <p>© memori</p>
+    </footer>
+  </div>
+
+  <script src="../assets/waitlist.js"></script>
+  <script>
+    const DOTS_PER_ROW = 20;
+    const ageInput = document.getElementById('parent-age');
+    const visitsInput = document.getElementById('visits');
+    const lifespanInput = document.getElementById('lifespan');
+    const out = document.getElementById('visits-left');
+    const note = document.getElementById('visits-note');
+    const canvas = document.getElementById('dots');
+
+    function num(input, fallback) {
+      const v = parseInt(input.value, 10);
+      return Number.isFinite(v) && v >= 0 ? v : fallback;
+    }
+
+    function render() {
+      const age = num(ageInput, 68);
+      const visits = num(visitsInput, 6);
+      const lifespan = num(lifespanInput, 90);
+      const years = Math.max(0, lifespan - age);
+      const left = Math.round(years * visits);
+
+      out.textContent = left.toLocaleString('ko-KR');
+      if (years === 0) {
+        note.textContent = '가정한 수명을 넘어서셨습니다. 지금부터의 모든 만남이 선물입니다.';
+      } else if (visits < 12) {
+        note.textContent = `${lifespan}세까지 사신다고 가정할 때. 한 달에 한 번 뵌다면 ${Math.round(years * 12).toLocaleString('ko-KR')}번이 됩니다.`;
+      } else {
+        note.textContent = `${lifespan}세까지 사신다고 가정할 때.`;
+      }
+
+      drawDots(Math.min(left, 2000));
+    }
+
+    function drawDots(count) {
+      const width = canvas.clientWidth;
+      const cell = width / DOTS_PER_ROW;
+      const rows = Math.max(1, Math.ceil(count / DOTS_PER_ROW));
+      const height = cell * rows;
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      canvas.style.height = height + 'px';
+
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = cssVar('--healthy');
+
+      const r = cell * 0.28;
+      for (let i = 0; i < count; i++) {
+        ctx.beginPath();
+        ctx.arc((i % DOTS_PER_ROW) * cell + cell / 2, Math.floor(i / DOTS_PER_ROW) * cell + cell / 2, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    [ageInput, visitsInput, lifespanInput].forEach((el) => el.addEventListener('input', render));
+    window.addEventListener('resize', render);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+    document.addEventListener('DOMContentLoaded', render);
+  </script>
+</body>
+</html>

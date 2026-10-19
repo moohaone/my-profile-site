@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>memori — 건강수명</title>
+  <meta name="description" content="한국인은 평균 18년을 아픈 채로 삽니다. memori는 건강검진표 한 장에서 시작해 그 시간을 되찾는 앱입니다.">
+  <meta property="og:title" content="memori — 남은 건강한 시간">
+  <meta property="og:description" content="기대수명 83.7세, 건강수명 65.5세. 그 사이의 18년을 되찾는 앱.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="mark" href="./">memori</a>
+      <a class="cta-link" href="#join">대기자 명단</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Memento mori</p>
+        <h1>한국인은 평균<br>18년을 아픈 채로 삽니다.</h1>
+        <p class="lead">기대수명 83.7세, 건강수명 65.5세. memori는 그 사이의 시간을 되찾는 앱입니다. 건강검진표 한 장에서 시작합니다.</p>
+      </section>
+
+      <section class="reveal" aria-labelledby="calc-title">
+        <h2 id="calc-title">당신에게 남은 건강한 시간</h2>
+        <p class="muted">한국인 평균을 기준으로 계산합니다. 평균은 운명이 아닙니다. 바꿀 수 있는 숫자입니다.</p>
+
+        <div class="calc">
+          <div class="calc-row">
+            <div class="field">
+              <label for="age">지금 나이</label>
+              <input id="age" type="number" inputmode="numeric" min="1" max="100" value="40">
+            </div>
+          </div>
+
+          <div>
+            <div class="figure"><span id="healthy-weeks">1,326</span><span class="figure-unit">주</span></div>
+            <p class="muted small" id="healthy-note">건강수명 65.5세까지, 평균적으로 남은 건강한 주</p>
+          </div>
+
+          <canvas class="weeks" id="weeks" role="img" aria-label="한 칸이 한 주인 인생 달력"></canvas>
+          <div class="legend">
+            <span style="--c: var(--lived)">지나온 시간</span>
+            <span style="--c: var(--healthy)">남은 건강한 시간</span>
+            <span style="--c: var(--unwell)">아픈 채로 보내는 평균 18년</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal">
+        <h2>검진표에 ‘주의’가 찍혔는데,<br>들은 말은 “운동하세요” 한마디였나요?</h2>
+        <p class="muted">당뇨 전단계, 콜레스테롤, 지방간, 혈압 경계. 아직 아프지는 않지만 이대로 가면 안 된다는 걸 압니다. 그런데 다음 검진까지 1년 동안, 무엇을 얼마나 바꿔야 하는지는 아무도 알려주지 않습니다.</p>
+        <p class="muted">memori는 그 1년을 위해 만들었습니다.</p>
+
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>검진표 한 장</h3>
+              <p>결과표를 찍으면 지금 추세의 건강수명을 숫자 하나로 보여줍니다.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>단 하나의 수치</h3>
+              <p>공복혈당이든 LDL이든, 다음 검진까지 바꿀 수치를 하나만 고릅니다. 하루 한 가지 행동으로 쪼갭니다.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>다음 검진에서 증명</h3>
+              <p>6개월 뒤 다시 검사하고, 숫자가 실제로 움직였는지 확인합니다. 느낌이 아니라 결과로.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="reveal">
+        <h2>덜어낸 앱</h2>
+        <div class="principles">
+          <div><strong>숫자 하나</strong><p>대시보드도, 그래프 더미도 없습니다. 남은 건강한 시간 하나만.</p></div>
+          <div><strong>하루 30초</strong><p>위젯과 아침 한 줄이 전부입니다. 앱에 오래 머물 필요가 없습니다.</p></div>
+          <div><strong>광고 없음</strong><p>당신의 시간을 팔지 않습니다. 건강 데이터도 팔지 않습니다.</p></div>
+        </div>
+      </section>
+
+      <section class="reveal" id="join" aria-labelledby="join-title">
+        <h2 id="join-title">먼저 만나보세요</h2>
+        <p class="muted">첫 100명과 함께 만듭니다. 출시 전에 가장 먼저 연락드립니다.</p>
+
+        <form class="waitlist" novalidate>
+          <input type="hidden" name="variant" value="healthspan">
+
+          <div class="field">
+            <label for="email">이메일</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <fieldset class="fieldset">
+            <legend>최근 건강검진에서 들은 이야기가 있나요? (복수 선택)</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="finding" value="blood_sugar"><span>혈당 · 당뇨 전단계</span></label>
+              <label><input type="checkbox" name="finding" value="cholesterol"><span>콜레스테롤 · 고지혈증</span></label>
+              <label><input type="checkbox" name="finding" value="fatty_liver"><span>지방간 · 간 수치</span></label>
+              <label><input type="checkbox" name="finding" value="blood_pressure"><span>혈압 경계</span></label>
+              <label><input type="checkbox" name="finding" value="weight"><span>체중 · 복부비만</span></label>
+              <label><input type="checkbox" name="finding" value="none"><span>특별히 없음</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <legend>다음 검진에서 수치가 실제로 좋아진다면, 한 달에 얼마까지 낼 의향이 있나요?</legend>
+            <div class="chips">
+              <label><input type="radio" name="wtp" value="0"><span>무료라면</span></label>
+              <label><input type="radio" name="wtp" value="5000"><span>5천 원</span></label>
+              <label><input type="radio" name="wtp" value="10000"><span>1만 원</span></label>
+              <label><input type="radio" name="wtp" value="20000"><span>2만 원</span></label>
+              <label><input type="radio" name="wtp" value="30000+"><span>3만 원 이상</span></label>
+            </div>
+          </fieldset>
+
+          <button class="submit" type="submit">대기자 명단에 오르기</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="consent">이메일은 memori 출시 소식에만 사용하며, 언제든 삭제를 요청할 수 있습니다.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>memori는 의료 서비스가 아니며, 질병의 진단·치료를 제공하지 않습니다. 건강 이상이 있다면 의료진과 상담하세요.</p>
+      <p>통계 출처: 국가데이터처(구 통계청), 「2024년 생명표」(2025.12) — 기대수명 83.7년, 유병기간 제외 기대수명 65.5년.</p>
+      <p>© memori</p>
+    </footer>
+  </div>
+
+  <script src="assets/waitlist.js"></script>
+  <script>
+    // Korea, 2024 life tables (국가데이터처, 2025.12)
+    const LIFE_EXPECTANCY = 83.7;
+    const HEALTHSPAN = 65.5;
+    const WEEKS_PER_YEAR = 52;
+
+    const ageInput = document.getElementById('age');
+    const weeksOut = document.getElementById('healthy-weeks');
+    const noteOut = document.getElementById('healthy-note');
+    const canvas = document.getElementById('weeks');
+
+    function currentAge() {
+      const v = parseInt(ageInput.value, 10);
+      return Number.isFinite(v) ? Math.min(Math.max(v, 0), 100) : 0;
+    }
+
+    function render() {
+      const age = currentAge();
+      const healthyWeeks = Math.max(0, Math.round((HEALTHSPAN - age) * WEEKS_PER_YEAR));
+
+      weeksOut.textContent = healthyWeeks.toLocaleString('ko-KR');
+      noteOut.textContent = healthyWeeks > 0
+        ? '건강수명 65.5세까지, 평균적으로 남은 건강한 주'
+        : '평균 건강수명을 지났습니다. 지금부터의 한 주 한 주가 평균을 넘어서는 시간입니다.';
+
+      drawWeeks(age);
+    }
+
+    function drawWeeks(age) {
+      const rows = Math.ceil(LIFE_EXPECTANCY);
+      const width = canvas.clientWidth;
+      const cell = width / WEEKS_PER_YEAR;
+      const height = cell * rows;
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      canvas.style.height = height + 'px';
+
+      const ctx = canvas.getContext('2d');
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, width, height);
+
+      const lived = age * WEEKS_PER_YEAR;
+      const healthyEnd = HEALTHSPAN * WEEKS_PER_YEAR;
+      const lifeEnd = LIFE_EXPECTANCY * WEEKS_PER_YEAR;
+      const colors = { lived: cssVar('--lived'), healthy: cssVar('--healthy'), unwell: cssVar('--unwell') };
+      const r = Math.max(0.8, cell * 0.3);
+
+      for (let i = 0; i < rows * WEEKS_PER_YEAR && i < lifeEnd; i++) {
+        const x = (i % WEEKS_PER_YEAR) * cell + cell / 2;
+        const y = Math.floor(i / WEEKS_PER_YEAR) * cell + cell / 2;
+        ctx.fillStyle = i < lived ? colors.lived : i < healthyEnd ? colors.healthy : colors.unwell;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    ageInput.addEventListener('input', render);
+    window.addEventListener('resize', render);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+    document.addEventListener('DOMContentLoaded', render);
+  </script>
+</body>
+</html>
