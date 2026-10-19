@@ -1,12 +1,12 @@
 # memori 대기자 명단 연결하기 (Google Sheets, 무료, 10분)
 
-랜딩 페이지 두 개는 같은 폼 스크립트(`memori/assets/waitlist.js`)를 씁니다. 응답은 하나의 시트에 쌓이고 `variant` 열(`healthspan` / `care`)로 구분됩니다.
+랜딩 페이지 세 개는 같은 폼 스크립트(`memori/assets/waitlist.js`)를 씁니다. 응답은 하나의 시트에 쌓이고 `variant` 열(`time` / `healthspan` / `care`)로 구분됩니다. `wtp`는 월 구독 지불 의사(건강수명·돌봄), `wtp_once`는 평생 구매 지불 의사(남은 시간)입니다.
 
 1. Google Sheets에서 새 시트를 만들고 이름을 `memori-waitlist`로 짓습니다.
 2. 메뉴 **확장 프로그램 → Apps Script**를 열고 아래 코드를 붙여넣습니다.
 
    ```js
-   const COLUMNS = ['submitted_at', 'variant', 'email', 'finding', 'pain', 'wtp',
+   const COLUMNS = ['submitted_at', 'variant', 'email', 'finding', 'pain', 'lens', 'wtp', 'wtp_once',
      'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'referrer'];
 
    function doPost(e) {
